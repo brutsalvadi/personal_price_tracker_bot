@@ -1,0 +1,37 @@
+defaults:
+  interval_minutes: 240
+  alert_on: price_drop
+
+targets:
+  - name: Fischer Speedmax 80 Skate Plus 610 Stiff
+    url: https://www.ekosport.es/fischer-speedmax-80-skate-plus-610-stiff-p-K105988
+    selector: offers.price
+    selector_type: json_ld
+    interval_minutes: 240
+    threshold: 320.0
+    alert_on: price_drop
+    js_rendered: false
+    currency: EUR
+
+  - name: Amazon Basics MicroSDXC 64GB 2-Pack
+    url: https://www.amazon.es/dp/B08TJTB8XS
+    selector:
+      - "#corePrice_desktop .a-offscreen"
+      - ".a-price .a-offscreen"
+    selector_type: css
+    interval_minutes: 240
+    alert_on: price_drop
+    js_rendered: true
+    currency: EUR
+
+  - name: Seaflo 42 Series Diaphragm Pump 12V
+    url: https://www.amazon.es/dp/B01CQ7DD0S
+    selector:
+      - "#corePrice_desktop .a-offscreen"
+      - ".a-price .a-offscreen"
+    selector_type: css
+    interval_minutes: 240
+    threshold: 77.5
+    alert_on: price_drop
+    js_rendered: true
+    currency: EUR

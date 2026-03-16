@@ -1,0 +1,21 @@
+[Unit]
+Description=Price Tracker Daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/src/price_tracking
+ExecStart=/home/pi/.local/bin/uv run python -m price_tracker
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=price-tracker
+
+# Environment file (optional — override individual variables here if needed)
+# EnvironmentFile=/home/pi/src/price_tracking/.env
+
+[Install]
+WantedBy=multi-user.target

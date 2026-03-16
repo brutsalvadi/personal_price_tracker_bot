@@ -1,0 +1,7 @@
+*.pyc
+.claude*
+.idea*
+data/
+.env
+.venv/publish/
+publish.sh
